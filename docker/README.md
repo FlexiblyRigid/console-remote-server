@@ -2,13 +2,13 @@ Open project path in Terminal and run below commands. Tested with Macbook Pro M1
 
 ```
 # build for local
-docker build -f docker/Dockerfile -t yavuzslmtpl/console-remote-server:2.1.17 --no-cache .
+docker build -f docker/Dockerfile -t kseit/console-remote-server:2.1.17 --no-cache .
 
 # build for push
-docker buildx build -f docker/Dockerfile -t yavuzslmtpl/console-remote-server:2.1.17,yavuzslmtpl/console-remote-server:latest --platform=linux/amd64,linux/arm64 --push .
+docker buildx build -f docker/Dockerfile -t kseit/console-remote-server:2.1.17,kseit/console-remote-server:latest --platform=linux/amd64,linux/arm64 --push .
 
-# run docker on port 80 to be available for Console Remote Web App to connect 
-docker run -p 80:80 -d yavuzslmtpl/console-remote-server:2.1.17
+# run docker on port 80 to be available for Console Remote Web App to connect
+docker run -p 80:80 -d kseit/console-remote-server:2.1.17
 ```
 
 Now you need to run Console Remote Web App in production mode to be able to connect to port 80 on docker
