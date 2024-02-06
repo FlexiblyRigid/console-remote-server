@@ -2,10 +2,10 @@ FROM ubuntu
 
 # Install common libraries
 RUN apt-get update
-RUN apt-get install -y curl gettext-base
+RUN apt-get install -y curl gettext-base net-tools nano
 
 # Install nodejs
-RUN curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 RUN node -v
 
