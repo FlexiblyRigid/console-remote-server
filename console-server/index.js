@@ -45,6 +45,7 @@ io.on('connection', function (socket) {
 	socket.on('command', function (data) {
 		if (!data.channel) data.channel = 'public';
 		socket.broadcast.to(data.channel).emit('toConsoleRe', data);
+		console.log('broadcast top', data);
 	});
 
 	socket.on('channel', function (channel) {
@@ -63,6 +64,7 @@ io.on('connection', function (socket) {
 			console.log('loopback', data);
 		} else {
 			socket.broadcast.to(data.channel).emit('toConsoleRe', data);
+			console.log('broadcast', data);
 		}
 		if (cb !== undefined) cb('success');
 	});
