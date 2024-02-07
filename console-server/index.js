@@ -60,6 +60,7 @@ io.on('connection', function (socket) {
 		if (!data.channel) data.channel = 'public';
 		if (data.loopback) {
 			io.to(data.channel).emit('toConsoleRe', data);
+			console.log('loopback', data);
 		} else {
 			socket.broadcast.to(data.channel).emit('toConsoleRe', data);
 		}
